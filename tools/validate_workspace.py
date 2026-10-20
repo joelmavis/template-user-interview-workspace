@@ -7,8 +7,8 @@ root=Path(__file__).resolve().parents[1]; errors=[]
 sample_footer='Sample report · Illustrative data and fictional participants'
 def report_copy(value):
     return re.sub(r'\b[Ss]ynthetic\b\s*', '', value)
-topics=list((root/'demo').glob('T*-*'))
-if len(topics)!=3: errors.append(f'expected 3 demo topics, found {len(topics)}')
+topics=list((root/'examples').glob('T*-*'))
+if len(topics)!=3: errors.append(f'expected 3 example topics, found {len(topics)}')
 completed=people=0
 for topic in topics:
     for rel in ['research-plan.md','interview-guide.md','topic.html','reports/topic-report.html']:
@@ -84,8 +84,8 @@ if completed!=6: errors.append(f'expected 6 completed interviews, found {complet
 for area in ('workspace','templates'):
     for document in (root/area).rglob('*.html'):
         content=document.read_text(encoding='utf8')
-        if sample_footer in content or 'Synthetic Demo' in content:
-            errors.append(f'non-demo HTML contains a sample-report disclosure: {document.relative_to(root)}')
+        if sample_footer in content or 'Illustrative example' in content:
+            errors.append(f'non-example HTML contains a sample-report disclosure: {document.relative_to(root)}')
 if errors:
     print('FAILED'); print('\n'.join(errors)); sys.exit(1)
 for document in root.rglob('*.html'):

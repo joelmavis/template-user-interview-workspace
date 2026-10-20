@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate only demo Topic and individual HTML reports from existing records."""
+"""Regenerate example Topic and individual HTML reports from existing records."""
 from datetime import datetime
 from html import escape
 from pathlib import Path
@@ -39,7 +39,7 @@ def page(title, body):
     body=body.replace('The single V001 follow-up is illustrative and cannot establish general improvement.','The single V001 follow-up cannot establish general improvement.')
     body=re.sub(r'\b[Ss]ynthetic\b\s*', '', body)
     body=re.sub(r'\b[Ff]ictional\b\s*', '', body)
-    body=body.replace('Approved in demo','Approval recorded')
+    body=body.replace('Approved in example','Approval recorded')
     body=re.sub(r' {2,}', ' ', body)
     return f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)}</title>{CSS}<main>{body}<footer>Sample report · Illustrative data and fictional participants</footer></main></html>\n'
 
@@ -99,7 +99,7 @@ def individual(topic,d,i):
     validations=[v for v in d['validations'] if v['interview_id']==iid]
     quotes=''.join(evidence_card(x,d,'../../') for x in evidence)
     broader=''.join(f'<div class="card"><h3>{e(f["key_point"])} <span class="muted">({e(f["finding_id"])})</span></h3><p><strong>This participant’s contribution.</strong> {e(", ".join(ids.intersection(f["evidence_ids"].split("|"))))} supplies the recorded statement shown above.</p><p><strong>Broader context.</strong> This Topic finding also draws on other linked interviews; those participants’ views are presented in the Topic report.</p><p><a href="../topic-report.html#{e(f["finding_id"])}">Read the broader finding in the Topic Research Report</a></p></div>' for f in findings) or '<p>This interview is not yet linked to a Topic finding.</p>'
-    solutions=''.join(f'<div class="card"><h3>{e(a["key_point"])} <span class="muted">({e(a["action_id"])})</span></h3><p><strong>Proposed solution.</strong> {e(a["proposed_solution"])}</p><p><strong>Why it appears here.</strong> This Topic-level proposal responds to a broader finding that includes this participant’s evidence. It is an analyst recommendation, not the participant’s requested design.</p><p><strong>Owner.</strong> {e(a["owner"])} · <strong>Due.</strong> {e(date(a["due_date"]))} · <strong>Priority.</strong> {e(a["priority"])} · <strong>Status.</strong> {pill(a["status"])} · <strong>Approved in demo.</strong> {e(a["user_confirmed"])}</p></div>' for a in actions) or '<p>No Topic-level action is connected to this participant’s evidence.</p>'
+    solutions=''.join(f'<div class="card"><h3>{e(a["key_point"])} <span class="muted">({e(a["action_id"])})</span></h3><p><strong>Proposed solution.</strong> {e(a["proposed_solution"])}</p><p><strong>Why it appears here.</strong> This Topic-level proposal responds to a broader finding that includes this participant’s evidence. It is an analyst recommendation, not the participant’s requested design.</p><p><strong>Owner.</strong> {e(a["owner"])} · <strong>Due.</strong> {e(date(a["due_date"]))} · <strong>Priority.</strong> {e(a["priority"])} · <strong>Status.</strong> {pill(a["status"])} · <strong>Approval recorded.</strong> {e(a["user_confirmed"])}</p></div>' for a in actions) or '<p>No Topic-level action is connected to this participant’s evidence.</p>'
     followup=''.join(f'<div class="card"><h3>{e(v["validation_id"])} · Follow-up for {e(v["action_id"])}</h3><p><strong>Record scope.</strong> This validation links to {e(iid)}, this participant’s interview record.</p><p><strong>Method and date.</strong> {e(v["planned_method"])} · {e(date(v["completed_at"] or v["planned_at"]))}</p><p><strong>Recorded result.</strong> {e(v["result"] or "Pending")}</p><p><strong>Further follow-up.</strong> {e(v["followup_needed"])} · {e(v["next_step"])}</p></div>' for v in validations) or '<p>No follow-up or validation result is recorded for this participant.</p>'
     body=f'''<p class="eyebrow">Individual Interview Report</p><h1>{e(person['alias'])}</h1><p class="lead">{e(d['title'])} · Source-linked interview record.</p><nav class="nav"><a href="../topic-report.html">Topic Research Report</a><a href="../../topic.html">Topic Workspace</a><a href="../../{e(i['record_path'])}">Original interview note</a></nav>
     <section><h2>Interview overview</h2><div class="grid"><div class="fact"><span class="label">Interview date</span>{e(date(i['actual_at']))}</div><div class="fact"><span class="label">Background</span>{e(person['profile'])}</div><div class="fact"><span class="label">Method</span>{e(i['method'])}</div><div class="fact"><span class="label">Session</span>{e(iid)} · {pill(i['status'])}</div></div></section>
@@ -125,7 +125,7 @@ def topic_report(topic,d):
     for a in d['actions']:
         refs=', '.join(f'<a href="#{e(fid)}">{e(fid)}</a>' for fid in a['finding_ids'].split('|') if fid)
         rationale=md(topic/a['rationale_detail_path']).get('intro','').splitlines()[-1]
-        action_html+=f'<article class="card"><h3>{e(a["action_id"])} · {e(a["key_point"])}</h3><p><strong>Proposed solution.</strong> {e(a["proposed_solution"])}</p><p><strong>Rationale and evidence.</strong> This addresses {refs}; the recorded statements and limits appear above. {e(rationale)}</p><div class="grid"><div class="fact"><span class="label">Owner</span>{e(a["owner"])}</div><div class="fact"><span class="label">Priority / due date</span>{e(a["priority"])} · {e(date(a["due_date"]))}</div><div class="fact"><span class="label">Execution status</span>{pill(a["status"])}</div><div class="fact"><span class="label">Approved in demo</span>{e(a["user_confirmed"])}</div></div><p><a href="../{e(a["rationale_detail_path"])}">Action record</a></p></article>'
+        action_html+=f'<article class="card"><h3>{e(a["action_id"])} · {e(a["key_point"])}</h3><p><strong>Proposed solution.</strong> {e(a["proposed_solution"])}</p><p><strong>Rationale and evidence.</strong> This addresses {refs}; the recorded statements and limits appear above. {e(rationale)}</p><div class="grid"><div class="fact"><span class="label">Owner</span>{e(a["owner"])}</div><div class="fact"><span class="label">Priority / due date</span>{e(a["priority"])} · {e(date(a["due_date"]))}</div><div class="fact"><span class="label">Execution status</span>{pill(a["status"])}</div><div class="fact"><span class="label">Approval recorded</span>{e(a["user_confirmed"])}</div></div><p><a href="../{e(a["rationale_detail_path"])}">Action record</a></p></article>'
     if not action_html: action_html='<p>No solution has been adopted or assigned. Review evidence before proposing one.</p>'
     validation_html=''.join(f'<article class="card"><h3>{e(v["validation_id"])} · {e(v["action_id"])}</h3><p><strong>Plan.</strong> {e(v["planned_method"])} on {e(date(v["planned_at"]))}.</p><p><strong>Completed.</strong> {e(date(v["completed_at"]))}. <strong>Recorded result.</strong> {e(v["result"] or "Pending")}</p><p><strong>Next step.</strong> {e(v["next_step"])} · Further follow-up: {e(v["followup_needed"])}.</p><p class="muted">Linked to {e(d["people"][d["sessions"][v["interview_id"]]["participant_id"]]["alias"])} ({e(v["interview_id"])}). One synthetic follow-up does not establish wider impact.</p></article>' for v in d['validations']) or '<p>No follow-up or validation result is recorded.</p>'
     body=f'''<p class="eyebrow">Topic Research Report</p><h1>{e(d['title'])}</h1><p class="lead">{e(plan.get('decision question',''))}</p><nav class="nav"><a href="../topic.html">Topic Workspace</a><a href="../../../dashboard.html">Home Dashboard</a><a href="../research-plan.md">Research plan</a></nav><p>{pill(str(len(done))+' of '+str(len(d['participants']))+' interviews completed')} {pill(str(len(d['actions']))+' recorded actions')}</p>
@@ -138,7 +138,7 @@ def topic_report(topic,d):
     return page(d['title']+' | Topic Research Report',body)
 
 def main():
-    topics=sorted(p for p in (ROOT/'demo').glob('T*-*') if p.is_dir())
+    topics=sorted(p for p in (ROOT/'examples').glob('T*-*') if p.is_dir())
     loaded=[(topic,load(topic)) for topic in topics]  # Check all source relationships before writing.
     generated=[]
     for topic,d in loaded:

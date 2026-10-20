@@ -27,9 +27,9 @@ Ask an agent to copy `templates/topic-template/` into `workspace/`, assign the n
 
 Agents share files; they do not automatically schedule one another or safely edit the same CSV at the same time. Let one writer finish and record a handoff before another edits shared data.
 
-## Demo data and private work
+## Example research and private work
 
-Everything in `demo/` is sample material. Example report footers identify the data and participants as illustrative; the names, interviews, actions, and outcomes are not real user feedback.
+`examples/` contains three complete sample research Topics. Example report footers identify the data and participants as illustrative; the names, interviews, actions, and outcomes are not real user feedback.
 
 Put real research only in `workspace/`. The repository ignores working material inside that folder while retaining its empty placeholder, which reduces the risk of accidentally committing private notes. Before sharing any copy, still inspect it for names, contact details, transcripts, credentials, and client information.
 

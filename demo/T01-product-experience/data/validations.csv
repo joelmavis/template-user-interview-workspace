@@ -1,0 +1,2 @@
+validation_id,action_id,interview_id,planned_method,planned_at,completed_at,result,followup_needed,next_step
+V001,A001,I001,Synthetic follow-up walkthrough,2026-10-08T10:00:00+08:00,2026-10-08T10:00:00+08:00,Synthetic participant found the first action without opening extra menus; one follow-up does not establish a general result.,yes,Validate with additional real participants if adopted.

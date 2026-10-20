@@ -1,0 +1,2 @@
+finding_id,key_point,detail_path,evidence_ids,evidence_limitations,status
+F001,An unclear first step may interrupt progress,analysis/findings/F001.md,E001|E002,Two short synthetic interviews; no evidence about workarounds; one interview still scheduled.,draft

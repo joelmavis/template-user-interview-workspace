@@ -1,0 +1,4 @@
+interview_id,participant_id,planned_at,actual_at,followup_at,relationship,method,status,record_path,topic_id
+I001,P001,,,,initial,video call,not_scheduled,,T03
+I002,P002,,,,initial,video call,not_scheduled,,T03
+I003,P003,,,,initial,video call,not_scheduled,,T03

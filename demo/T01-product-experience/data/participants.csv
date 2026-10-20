@@ -1,0 +1,5 @@
+participant_id,alias,profile,recruitment_status,consent_status,next_step
+P001,Alex Morgan,Independent designer,completed,synthetic_demo,Analyse completed session
+P002,Emma Lee,Operations coordinator,completed,synthetic_demo,Analyse completed session
+P003,Sam Patel,Freelance researcher,completed,synthetic_demo,Analyse completed session
+P004,Jordan Kim,Project manager,completed,synthetic_demo,Analyse completed session

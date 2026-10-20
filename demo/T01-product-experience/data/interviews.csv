@@ -1,0 +1,5 @@
+interview_id,participant_id,planned_at,actual_at,followup_at,relationship,method,status,record_path,topic_id
+I001,P001,2026-09-11T10:00:00+08:00,2026-09-11T10:00:00+08:00,2026-10-08T10:00:00+08:00,initial,video call,completed,interviews/P001-I001.md,T01
+I002,P002,2026-09-12T10:00:00+08:00,2026-09-12T10:00:00+08:00,,initial,video call,completed,interviews/P002-I002.md,T01
+I003,P003,2026-09-13T10:00:00+08:00,2026-09-13T10:00:00+08:00,,initial,video call,completed,interviews/P003-I003.md,T01
+I004,P004,2026-09-14T10:00:00+08:00,2026-09-14T10:00:00+08:00,,initial,video call,completed,interviews/P004-I004.md,T01

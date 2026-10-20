@@ -1,0 +1,12 @@
+# Handoff Log
+
+| Recorded at | Topic | Role | Task and result | Files changed | Next step / blocker |
+|---|---|---|---|---|---|
+| 2026-10-20T10:00:00+08:00 | Workspace | Reviewer | Initial synthetic demo baseline built and static links checked. | All baseline files | Test in puppyone Desktop; see TECHNICAL_NOTES.md. |
+| 2026-10-20T15:38:00+08:00 | Workspace | Reviewer | Removed promotional copy; checked user-facing pages and reran the workspace validator. | README.md, dashboard.html, TECHNICAL_NOTES.md | No copy blockers; Desktop behavior remains untested. |
+| 2026-10-20T16:05:00+08:00 | T01–T03 | Analyst / Reviewer | Rebuilt three Topic and six individual reports from source records; corrected the unsupported T02 F001 claim; validated content, IDs, and links. | demo/T01–T03 analysis, interviews, and reports; demo/T02 data/findings.csv and topic.html; tools/build_reports.py; tools/validate_workspace.py; QA_CHECKLIST.md | Desktop visual and navigation checks remain untested. |
+| 2026-10-20T16:00:00+08:00 | T04 | Planner | Created a preliminary online-store checkout planning Topic. No participants, schedules, interviews, evidence, findings, actions, or validations were added. | Planning files were later removed from the public candidate and retained in a private working backup. | Review scope and guide before restoring this material to a private workspace. |
+| 2026-10-20T16:20:00+08:00 | Workspace | Reviewer | Prepared the release candidate: refined participant-focused reports, documented browser and Desktop evidence boundaries, protected private workspace data, and reran regeneration and consistency checks. | README.md, QA_CHECKLIST.md, TECHNICAL_NOTES.md, RELEASE_READINESS.md, .gitignore, HANDOFF.md, tools/build_reports.py, generated reports | Owner must choose a license and Git owner/default branch, then approve metadata and the known Desktop navigation limitation before publication. |
+| 2026-10-20T16:30:00+08:00 | T01–T03 | Reviewer | Removed repeated demo messaging and the top report banner; retained one concise sample-data disclosure in each example report footer. Confirmed real-workspace templates carry no demo marker. | tools/build_reports.py, tools/validate_workspace.py, dashboard.html, demo/T01–T03 topic and report HTML, templates/topic-template/topic.html, README.md, QA_CHECKLIST.md | Existing release gates and puppyone Desktop navigation limitation remain unchanged. |
+
+Use this human-readable record after every meaningful update. It is a coordination aid, not a lock or automatic task queue.

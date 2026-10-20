@@ -1,0 +1,3 @@
+action_id,key_point,proposed_solution,rationale_detail_path,finding_ids,owner,due_date,priority,status,user_confirmed
+A001,Make the first task explicit,Add a concise start panel that names the first useful action and allows dismissal.,actions/A001.md,F001,Product lead,2026-10-01,High,validated_synthetic,yes
+A002,Offer optional guided orientation,"Provide a short, skippable orientation with plain-language labels.",actions/A002.md,F002,Design lead,2026-10-15,Medium,proposed,no

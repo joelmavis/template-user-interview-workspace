@@ -1,0 +1,4 @@
+participant_id,alias,profile,recruitment_status,consent_status,next_step
+P001,Taylor Brooks,Small business owner,completed,synthetic_demo,Analyse completed session
+P002,Casey Nguyen,Community manager,completed,synthetic_demo,Analyse completed session
+P003,Riley Chen,Student researcher,scheduled,synthetic_demo,Interview on planned date

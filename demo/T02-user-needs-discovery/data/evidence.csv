@@ -1,0 +1,3 @@
+evidence_id,interview_id,type,content_summary,source_location,review_status
+E001,I001,quote,"“I could not tell where to begin, so I opened three menus before trying the first one.”",interviews/P001-I001.md#source-notes,reviewed_synthetic
+E002,I002,quote,“I need a visible next step; otherwise I leave it until later.”,interviews/P002-I002.md#source-notes,reviewed_synthetic

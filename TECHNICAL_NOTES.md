@@ -3,8 +3,8 @@
 ## Verified in this release candidate
 
 - Generated reports are static HTML with inline CSS and relative local links; they do not require a CDN or external network resource.
-- `tools/build_reports.py` regenerates Topic and individual reports from Markdown and CSV sources and checks source relationships before writing.
-- `tools/validate_workspace.py` checks source structure, IDs, example counts, report content, and local link targets.
+- `04-tools/build_reports.py` regenerates Topic and individual reports from Markdown and CSV sources and checks source relationships before writing.
+- `04-tools/validate_workspace.py` checks source structure, IDs, example counts, report content, and local link targets.
 - Relative navigation works when the folder is served to a normal web browser over local HTTP.
 
 ## puppyone Desktop observation

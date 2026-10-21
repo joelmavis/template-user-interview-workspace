@@ -138,7 +138,7 @@ def topic_report(topic,d):
     return page(d['title']+' | Topic Research Report',body)
 
 def main():
-    topics=sorted(p for p in (ROOT/'examples').glob('T*-*') if p.is_dir())
+    topics=sorted(p for p in (ROOT/'02-examples').glob('T*-*') if p.is_dir())
     loaded=[(topic,load(topic)) for topic in topics]  # Check all source relationships before writing.
     generated=[]
     for topic,d in loaded:

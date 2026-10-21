@@ -1,5 +1,12 @@
 # User Interview Workspace
 
+## Folder order
+
+- `01-workspace/` — private research created by the user.
+- `02-examples/` — three complete illustrative Topics.
+- `03-templates/` — the clean Topic starter.
+- `04-tools/` — report generation and validation utilities.
+
 User Interview Workspace is a ready-to-use workflow for planning interviews, preserving source notes, turning evidence into findings, tracking approved actions, and recording follow-up validation. It is designed for non-developers working with compatible file-based agents.
 
 ## Quick Start
@@ -23,15 +30,15 @@ Markdown files preserve the original plans, notes, and detailed research sources
 
 ## Start a new Topic through agent chat
 
-Ask an agent to copy `templates/topic-template/` into `workspace/`, assign the next Topic ID, and guide you one decision at a time. The agent should read `AGENTS.md`, `PLAYBOOK.md`, and the latest relevant entry in `HANDOFF.md` before editing. It must not invent participants, quotations, findings, actions, or outcomes.
+Ask an agent to copy `03-templates/topic-template/` into `01-workspace/`, assign the next Topic ID, and guide you one decision at a time. The agent should read `AGENTS.md`, `PLAYBOOK.md`, and the latest relevant entry in `HANDOFF.md` before editing. It must not invent participants, quotations, findings, actions, or outcomes.
 
 Agents share files; they do not automatically schedule one another or safely edit the same CSV at the same time. Let one writer finish and record a handoff before another edits shared data.
 
 ## Example research and private work
 
-`examples/` contains three complete sample research Topics. Example report footers identify the data and participants as illustrative; the names, interviews, actions, and outcomes are not real user feedback.
+`02-examples/` contains three complete sample research Topics. Example report footers identify the data and participants as illustrative; the names, interviews, actions, and outcomes are not real user feedback.
 
-Put real research only in `workspace/`. The repository ignores working material inside that folder while retaining its empty placeholder, which reduces the risk of accidentally committing private notes. Before sharing any copy, still inspect it for names, contact details, transcripts, credentials, and client information.
+Put real research only in `01-workspace/`. The repository ignores working material inside that folder while retaining its empty placeholder, which reduces the risk of accidentally committing private notes. Before sharing any copy, still inspect it for names, contact details, transcripts, credentials, and client information.
 
 ## Reading and refreshing reports
 
@@ -40,8 +47,8 @@ Open [Home Dashboard](dashboard.html), choose a Topic, then open its Topic or in
 When confirmed source data changes, ask an agent: “Regenerate the reports and run the workspace validation.” Agents can use:
 
 ```sh
-python3 tools/build_reports.py
-python3 tools/validate_workspace.py
+python3 04-tools/build_reports.py
+python3 04-tools/validate_workspace.py
 ```
 
 These are maintainer and agent commands, not end-user setup steps.

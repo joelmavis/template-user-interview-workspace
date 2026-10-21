@@ -10,7 +10,7 @@
 | Area | Result | Notes |
 |---|---|---|
 | Product name and copy | Ready | User-facing copy uses **User Interview Workspace** and avoids template-brand marketing language or unsupported claims. |
-| Example / real-data separation | Ready | `examples/` contains clearly identified sample research. `workspace/` is empty in the public repository and protected by `.gitignore`. |
+| Example / real-data separation | Ready | `02-examples/` contains clearly identified sample research. `01-workspace/` is empty in the public repository and protected by `.gitignore`. |
 | Data and report consistency | Ready | 3 Topics, 10 participants, 6 completed interviews, 3 Topic reports, and 6 individual reports pass the repository validator. |
 | README and non-developer onboarding | Ready | Quick Start, report guidance, privacy boundaries, maintainer commands, and the known Desktop limitation are documented. |
 | Agent workflow | Ready | `AGENTS.md`, `CLAUDE.md`, `PLAYBOOK.md`, and `HANDOFF.md` define roles, evidence rules, approvals, and handoffs. |
@@ -25,8 +25,8 @@
 ## Validation commands
 
 ```sh
-python3 tools/build_reports.py
-python3 tools/validate_workspace.py
+python3 04-tools/build_reports.py
+python3 04-tools/validate_workspace.py
 ```
 
 Latest result:

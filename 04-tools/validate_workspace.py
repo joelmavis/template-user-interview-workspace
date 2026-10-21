@@ -4,10 +4,15 @@ from pathlib import Path
 from html import escape
 import csv, re, sys
 root=Path(__file__).resolve().parents[1]; errors=[]
+required_roots=('01-workspace','02-examples','03-templates','04-tools')
+for name in required_roots:
+    if not (root/name).is_dir(): errors.append(f'missing ordered directory: {name}')
+for name in ('workspace','examples','templates','tools'):
+    if (root/name).exists(): errors.append(f'legacy unnumbered directory remains: {name}')
 sample_footer='Sample report · Illustrative data and fictional participants'
 def report_copy(value):
     return re.sub(r'\b[Ss]ynthetic\b\s*', '', value)
-topics=list((root/'examples').glob('T*-*'))
+topics=list((root/'02-examples').glob('T*-*'))
 if len(topics)!=3: errors.append(f'expected 3 example topics, found {len(topics)}')
 completed=people=0
 for topic in topics:
@@ -81,7 +86,7 @@ for topic in topics:
         errors.append(f'{topic.name}: empty Topic report lacks no-evidence notice')
 if people!=10: errors.append(f'expected 10 participants, found {people}')
 if completed!=6: errors.append(f'expected 6 completed interviews, found {completed}')
-for area in ('workspace','templates'):
+for area in ('01-workspace','03-templates'):
     for document in (root/area).rglob('*.html'):
         content=document.read_text(encoding='utf8')
         if sample_footer in content or 'Illustrative example' in content:

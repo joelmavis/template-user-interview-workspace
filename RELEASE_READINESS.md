@@ -12,7 +12,7 @@
 | Product name and copy | Ready | User-facing copy uses **User Interview Workspace** and avoids template-brand marketing language or unsupported claims. |
 | Clean starting workspace | Ready | `01-workspace/` is empty and protected by `.gitignore`; no preloaded Topic or report appears in the Dashboard. Regression data is isolated under `05-tests/fixtures/`. |
 | Data and report consistency | Ready | Isolated fixtures cover 3 Topics, 10 participants, 6 completed interviews, 3 Topic reports, and 6 individual reports. User-facing pages lead with names and descriptions while retaining IDs for traceability. |
-| README and non-developer onboarding | Ready | Quick Start, report guidance, privacy boundaries, maintainer commands, and the known Desktop limitation are documented. |
+| README and non-developer onboarding | Ready | Quick Start supports an Agent-created Topic or local-file input, with no URL-ingestion path; report guidance, privacy boundaries, maintainer commands, and the known Desktop limitation are documented. |
 | Agent workflow | Ready | `AGENTS.md`, `CLAUDE.md`, `PLAYBOOK.md`, and `HANDOFF.md` define roles, evidence rules, approvals, and handoffs. |
 | Secrets, personal records, and machine paths | Ready | The pre-publication scan found no embedded credentials, real client records, or absolute developer-machine paths. |
 | Temporary/runtime artifacts | Ready | Local metadata and Python cache files were removed and are ignored. |

@@ -1,7 +1,7 @@
 # Research Topic Playbook
 
 ## 1. Create and agree
-Planner records the decision problem, scope, participant criteria, method, sample rationale, dates, and explicit user confirmation in `research-plan.md`. Prepare open questions in `interview-guide.md`; wait for approval before using it.
+Start from either the user's natural-language research goal or readable local files. Pasted URLs are not a separate input mode. Planner records the decision problem, scope, participant criteria, method, sample rationale, dates, and explicit user confirmation in `research-plan.md`. Prepare open questions in `interview-guide.md`; wait for approval before using it.
 
 ## 2. Coordinate
 Coordinator adds participants and planned dates. `planned_at` is an intention; `actual_at` is only filled after the interview. New rounds create new interview rows.

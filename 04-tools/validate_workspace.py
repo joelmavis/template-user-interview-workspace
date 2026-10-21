@@ -198,6 +198,10 @@ def main(argv=None):
         errors.append("dashboard.html exposes test-fixture or sample content")
     if not workspace and "Start your first interview Topic" not in dashboard_html:
         errors.append("dashboard.html lacks the first-Topic empty state")
+    if not workspace and ("Describe the research" not in dashboard_html or "Use local files" not in dashboard_html):
+        errors.append("dashboard.html lacks the two local-first starting modes")
+    if re.search(r"(?:start with|begin with|paste|provide|submit).{0,30}(?:public URL|course link|web link)", dashboard_html, re.I):
+        errors.append("dashboard.html offers URL ingestion as a starting mode")
     for document in root.rglob("*.html"):
         text = document.read_text(encoding="utf-8")
         for href in re.findall(r'href="([^"]+)"', text):

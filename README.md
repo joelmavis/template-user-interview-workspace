@@ -12,7 +12,7 @@ User Interview Workspace is a ready-to-use workflow for planning interviews, pre
 ## Quick Start
 
 1. Open this folder in puppyone Desktop, then open `dashboard.html`.
-2. Tell an agent what you want to learn in your own words, for example: “Help me create a Topic about the checkout experience and prepare an interview guide.”
+2. Start in one of two local-first ways: describe the research goal in your own words, or attach local notes, a brief, or other research files. For example: “Help me create a Topic about the checkout experience and prepare an interview guide.”
 3. Review the research plan and questions before any participant or interview data is added.
 4. Give the agent your confirmed notes. Review proposed findings and explicitly approve any action before it is treated as adopted.
 5. Ask the agent to refresh the reports, then read the Topic and individual reports from the dashboard.
@@ -30,9 +30,12 @@ Markdown files preserve the original plans, notes, and detailed research sources
 
 HTML pages use meaningful names first: Topic titles, participant aliases, finding titles, evidence sources, and action names. Stable IDs remain in the source files and appear only as supporting traceability details in detailed HTML records.
 
-## Start a new Topic through agent chat
+## Two ways to start a Topic
 
-Ask an agent to copy `03-templates/topic-template/` into `01-workspace/`, assign the next Topic ID, and guide you one decision at a time. The agent should read `AGENTS.md`, `PLAYBOOK.md`, and the latest relevant entry in `HANDOFF.md` before editing. It must not invent participants, quotations, findings, actions, or outcomes.
+- **Agent-created Topic:** describe the research goal, target participants, or decision you need to make.
+- **Local files:** attach existing notes, a research brief, or other local material and ask the agent to use it when creating the Topic.
+
+The workspace does not use pasted URLs as a separate input mode. Ask an agent to copy `03-templates/topic-template/` into `01-workspace/`, assign the next Topic ID, and guide you one decision at a time. The agent should read `AGENTS.md`, `PLAYBOOK.md`, and the latest relevant entry in `HANDOFF.md` before editing. It must not invent participants, quotations, findings, actions, or outcomes.
 
 Agents share files; they do not automatically schedule one another or safely edit the same CSV at the same time. Let one writer finish and record a handoff before another edits shared data.
 

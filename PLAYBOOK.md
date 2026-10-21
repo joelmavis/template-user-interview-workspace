@@ -20,4 +20,10 @@ Record validation plan, actual date, result and follow-up need. Mark solved, par
 
 ## Completion conditions
 
-A Topic is complete only when its evidence is traceable, each action has an owner/status, validation is recorded or explicitly pending, limitations are visible, and reports reflect the latest confirmed data.
+A Topic is complete only when its evidence is traceable, each action has an owner/status, validation is recorded or explicitly pending, limitations are visible, and reports reflect the latest confirmed data. HTML should lead with Topic names, participant aliases, finding titles, evidence content and action names; IDs remain secondary traceability details.
+
+## Validation modes
+
+During normal research, regenerate reports and run `python3 04-tools/validate_workspace.py`. It validates every real Topic under `01-workspace/` and uses isolated fixtures under `05-tests/` for regression coverage; populated research is expected.
+
+`python3 04-tools/check_public_release.py` is only for preparing the blank public template. Run it from a clean release copy, not after each user edit. Its blank-workspace requirement must never be satisfied by deleting interviews, evidence, findings, actions, or validation records from a user's workspace.

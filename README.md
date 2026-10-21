@@ -3,9 +3,9 @@
 ## Folder order
 
 - `01-workspace/` — private research created by the user.
-- `02-examples/` — three complete illustrative Topics.
 - `03-templates/` — the clean Topic starter.
 - `04-tools/` — report generation and validation utilities.
+- `05-tests/` — isolated maintainer fixtures; not part of the starting workspace.
 
 User Interview Workspace is a ready-to-use workflow for planning interviews, preserving source notes, turning evidence into findings, tracking approved actions, and recording follow-up validation. It is designed for non-developers working with compatible file-based agents.
 
@@ -21,12 +21,14 @@ You do not need to edit CSV files or run Python during normal use.
 
 ## What you will see
 
-- **Home Dashboard** — an overview of the three example Topics and their current stages.
+- **Home Dashboard** — your real Topics and their current stages, or a clear first-Topic prompt when the workspace is empty.
 - **Topic Workspace** — participant progress, findings, actions, next steps, and report links for one study.
 - **Individual Interview Report** — one participant’s date, background, recorded question and answer, verbatim evidence, interpretation, recommendation, related Topic context, and follow-up status.
 - **Topic Research Report** — the full cross-participant analysis, detailed findings, proposed solutions, owners, execution status, and validation results.
 
 Markdown files preserve the original plans, notes, and detailed research sources. CSV files hold structured status and references. Generated HTML provides the readable view.
+
+HTML pages use meaningful names first: Topic titles, participant aliases, finding titles, evidence sources, and action names. Stable IDs remain in the source files and appear only as supporting traceability details in detailed HTML records.
 
 ## Start a new Topic through agent chat
 
@@ -34,11 +36,11 @@ Ask an agent to copy `03-templates/topic-template/` into `01-workspace/`, assign
 
 Agents share files; they do not automatically schedule one another or safely edit the same CSV at the same time. Let one writer finish and record a handoff before another edits shared data.
 
-## Example research and private work
-
-`02-examples/` contains three complete sample research Topics. Example report footers identify the data and participants as illustrative; the names, interviews, actions, and outcomes are not real user feedback.
+## Private work and test fixtures
 
 Put real research only in `01-workspace/`. The repository ignores working material inside that folder while retaining its empty placeholder, which reduces the risk of accidentally committing private notes. Before sharing any copy, still inspect it for names, contact details, transcripts, credentials, and client information.
+
+Maintainer test data lives under `05-tests/fixtures/`. It is used only for automated relationship and report checks; it is not copied into your workspace and never appears on the Home Dashboard.
 
 ## Reading and refreshing reports
 
@@ -52,6 +54,13 @@ python3 04-tools/validate_workspace.py
 ```
 
 These are maintainer and agent commands, not end-user setup steps.
+
+## Two validation modes
+
+- **User Workspace Mode** is the normal workflow. `python3 04-tools/validate_workspace.py` checks real Topics in `01-workspace/` and isolated test fixtures, without requiring the workspace to be empty.
+- **Template Release Mode** is only for maintainers preparing the public blank template. `python3 04-tools/check_public_release.py` intentionally blocks any real Topic or potential private data.
+
+Agents should not run Template Release Mode after normal research updates, and must never delete user records to make it pass. If this folder still points to GitHub or GitLab, move real research to a private working copy before adding participant notes or other sensitive information.
 
 ## Known limitation
 

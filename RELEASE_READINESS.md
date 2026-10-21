@@ -10,8 +10,8 @@
 | Area | Result | Notes |
 |---|---|---|
 | Product name and copy | Ready | User-facing copy uses **User Interview Workspace** and avoids template-brand marketing language or unsupported claims. |
-| Example / real-data separation | Ready | `02-examples/` contains clearly identified sample research. `01-workspace/` is empty in the public repository and protected by `.gitignore`. |
-| Data and report consistency | Ready | 3 Topics, 10 participants, 6 completed interviews, 3 Topic reports, and 6 individual reports pass the repository validator. |
+| Clean starting workspace | Ready | `01-workspace/` is empty and protected by `.gitignore`; no preloaded Topic or report appears in the Dashboard. Regression data is isolated under `05-tests/fixtures/`. |
+| Data and report consistency | Ready | Isolated fixtures cover 3 Topics, 10 participants, 6 completed interviews, 3 Topic reports, and 6 individual reports. User-facing pages lead with names and descriptions while retaining IDs for traceability. |
 | README and non-developer onboarding | Ready | Quick Start, report guidance, privacy boundaries, maintainer commands, and the known Desktop limitation are documented. |
 | Agent workflow | Ready | `AGENTS.md`, `CLAUDE.md`, `PLAYBOOK.md`, and `HANDOFF.md` define roles, evidence rules, approvals, and handoffs. |
 | Secrets, personal records, and machine paths | Ready | The pre-publication scan found no embedded credentials, real client records, or absolute developer-machine paths. |
@@ -27,13 +27,15 @@
 ```sh
 python3 04-tools/build_reports.py
 python3 04-tools/validate_workspace.py
+python3 04-tools/check_public_release.py
 ```
 
 Latest result:
 
 ```text
-Refreshed 3 Topic reports and 6 individual reports; source relationships checked.
-PASSED: 3 topics, 10 participants, 6 completed interviews; source relationships, report content, and HTML links checked.
+Refreshed Home Dashboard and 0 user Topic Workspaces; validated and regenerated 3 isolated test fixtures; 9 reports checked.
+PASSED User Workspace Mode: 0 user topics / 0 participants / 0 completed interviews; 3 isolated fixtures / 10 fixture participants / 6 completed fixture interviews; source relationships, name-first reports, empty state, and links checked.
+OK Template Release Mode: blank user workspace and public text scan
 ```
 
 ## Repository metadata

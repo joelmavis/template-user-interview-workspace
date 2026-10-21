@@ -3,8 +3,10 @@
 ## Verified in this release candidate
 
 - Generated reports are static HTML with inline CSS and relative local links; they do not require a CDN or external network resource.
-- `04-tools/build_reports.py` regenerates Topic and individual reports from Markdown and CSV sources and checks source relationships before writing.
-- `04-tools/validate_workspace.py` checks source structure, IDs, example counts, report content, and local link targets.
+- `04-tools/build_reports.py` regenerates the Home Dashboard and all real Topic reports in `01-workspace/`. It also regenerates isolated fixtures under `05-tests/` for regression coverage, but fixture content never appears on the Dashboard.
+- `04-tools/validate_workspace.py` is the daily User Workspace Mode check. It validates source structure, IDs, real Topic records, isolated fixtures, report content, name-first presentation, the blank-workspace empty state, and local link targets without requiring an empty workspace.
+- Generated HTML resolves IDs to Topic titles, participant aliases, finding titles, evidence sources and action names. IDs stay unchanged in CSV/Markdown and remain available in HTML only as secondary traceability metadata.
+- `04-tools/check_public_release.py` is a separate maintainer-only Template Release Mode check for a blank public copy.
 - Relative navigation works when the folder is served to a normal web browser over local HTTP.
 
 ## puppyone Desktop observation
